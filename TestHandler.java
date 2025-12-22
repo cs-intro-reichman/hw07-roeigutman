@@ -11,6 +11,9 @@ public class TestHandler {
         for (int i = 1; i < args.length; i++) {
             testIntToBin(args[i]);
         }
+        if (this.tester.hasPassed()) {
+            this.tester.updatePoints();
+        }
         System.out.println(tester);
     }    
 
@@ -39,6 +42,9 @@ public class TestHandler {
         this.tester.reset(TesterQuestionEnum.IS_PALINDROME);
         for (int i = 1; i < args.length; i++) {
             testIsPalindrome(args[i]);
+        }
+        if (this.tester.hasPassed()) {
+            this.tester.updatePoints();
         }
         System.out.println(this.tester);
         
@@ -74,6 +80,9 @@ public class TestHandler {
         for (int i = 0; i < values.length; i++) {
             testBinomial(values[i]);
         }
+        if (this.tester.hasPassed()) {
+            this.tester.updatePoints();
+        }
         System.out.println(tester);
     }
 
@@ -106,6 +115,9 @@ public class TestHandler {
         for (int i = 0; i < values.length; i++) {
             testMemoBinomial(values[i]);
         }
+        if (this.tester.hasPassed()) {
+            this.tester.updatePoints();
+        }
         System.out.println(tester);
     }
 
@@ -130,6 +142,9 @@ public class TestHandler {
         this.tester.reset(TesterQuestionEnum.IS_SORTED);
         for (int i = 1; i < args.length; i++) {
             testIsSorted(args[i]);
+        }
+        if (this.tester.hasPassed()) {
+            this.tester.updatePoints();
         }
         System.out.println(this.tester);
         
@@ -159,7 +174,6 @@ public class TestHandler {
         }
         this.tester.test(arrayStr, expected, actual);
     }
-
 
     public void conclusion() {
         this.tester.conclusion();
